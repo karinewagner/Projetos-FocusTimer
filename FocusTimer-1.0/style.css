@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --bg-all: #121214;
+  --tx-color: #FFFFFF;
+
+  --base-colorOne: 194;
+  --bg-centerOne: hsla(var(--base-colorOne), 100%, 63%, 0.13);
+  --btn-colorOne: hsl(var(--base-colorOne), 100%, 63%);
+
+  --base-colorTwo: 0;
+  --bg-centerTwo: hsla(var(--base-colorTwo), 100%, 100%, 0.13);
+  --btn-colorTwo: hsla(var(--base-colorTwo), 100%, 100%);
+}
+
+body {
+  background-color: var(--bg-all);
+  color: var(--tx-color);
+
+  font-family: 'Roboto', sans-serif;
+
+  display: grid; /*Quando se aplica o GRID no body e após abre as opções de posicionamento nos filhos (main e footer)*/
+  min-height: 100vh;
+}
+
+main {
+  justify-self: center;
+  align-self: end;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+
+  cursor: pointer;
+}
+
+svg {
+  width: clamp(1rem, 2rem + 10vw, 6.4rem); /* 1º minimo, 2º ideal, 3º máximo */
+  height: clamp(1rem, 2rem + 10vh, 6.5rem);
+}
+
+.hide {
+  display: none;
+}
+
+.play svg g circle.cls-1,
+.play svg g circle.cls-3,
+.pause svg g path.cls-2,
+.stop svg g circle.cls-1,
+.stop svg g circle.cls-3,
+.set svg g path.cls-2,
+.sound-on svg path {
+  fill: var(--btn-colorOne);
+}
+
+.play svg g path.cls-2,
+.pause svg g circle.cls-1,
+.stop svg g path.cls-2,
+.set svg g circle.cls-1,
+.sound-off svg path {
+  fill: var(--btn-colorTwo);
+}
+
+#timer {
+  font-size: clamp(4rem, 4rem + 10vw, 8.8rem);
+
+  display: flex;
+  margin-bottom: 1.6rem;
+}
+
+#controls {
+  background-color: var(--bg-centerOne);
+  border-radius: 9999px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1rem, 2rem + 1vw, 3.2rem);
+
+  width: clamp(10rem, 10rem + 30vw, 22.8rem); /* 1º minimo, 2º ideal, 3º máximo */
+  height: clamp(4rem, 4rem + 10vw, 8.8rem);
+}
+
+footer {
+  justify-self: end;
+  align-self: end;
+
+  padding: 0 4rem 3.2rem 0;
+}
