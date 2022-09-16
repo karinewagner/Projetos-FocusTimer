@@ -13,7 +13,7 @@
 
 [Clique aqui para acessar](https://karinewagner.github.io/Projetos-FocusTimer/FocusTimer-1.0/) ☺️👍
 
-1º Zerado / 2º Em andamento (ative o son)
+1º Zerado / 2º Em andamento (ative o som)
 ![preview](./FocusTimer-1.0/.github/preview.png) 
 </br>
 </br>
