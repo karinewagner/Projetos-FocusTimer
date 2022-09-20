@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  background-color: #FFFFFF;
+
+  --color-timer: #323238;
+  --color-bt-timer: #323238;
+
+  --bg-bt-sons-off: #E1E1E6;
+  --color-bt-sons-off: #323238;
+  --color-bt-sons-on: #FFFFFF;
+
+  --btn-icon-color: gray;
+}
+
+
+main {
+  width: 82rem;
+  margin: 20rem auto;
+
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 10rem + 5vw, 19rem);
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  transition: 0.6s;
+}
+
+.menu {
+  max-width: 32.1rem;
+  max-height: 21.3rem;
+}
+
+.timer {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12.6rem;
+  font-weight: 500;
+  line-height: 14.8rem;
+  color: var(--color-timer);
+
+  display: flex;
+  text-align: center;
+
+  margin-bottom: 1.7rem;
+}
+
+.buttons-control {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: clamp(1rem, 1rem + 2vw, 4rem);
+}
+
+.button-menu:hover {
+  transform: scale(1.2);
+  transition: 0.6s;
+}
+
+/*Botões de sons ambiente*/
+.sons {
+  display: grid;
+  grid-template-columns: repeat(2, 15rem);
+  grid-template-rows: 15rem;
+  column-gap: 2rem;
+  row-gap: 3rem;
+}
+
+.base-btn-sons {
+  height: 15.2rem;
+  width: 13.8rem;
+  background-color: #E1E1E6;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.6s;
+}
+
+.btn-icon-sons path {
+  fill: var(--btn-icon-color);
+}
+
+.base-btn-sons:hover {
+  cursor: pointer;
+  --btn-icon-color: white;
+  transform: scale(1.1);
+  transition: 0.6s;
+}
+
+.btn-forest:hover {
+  background-image: linear-gradient(62deg, #10a352 0%, #4fec99 100%);
+}
+
+.btn-rain:hover{
+  background-image: linear-gradient(62deg, #8BC6EC 0%, #3c67df 100%);
+}
+
+.btn-coffee:hover{
+  background-image: linear-gradient(62deg, #9d67cc 0%, #fa7fc5 100%);
+}
+
+.btn-fireplace:hover{
+  background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+}
