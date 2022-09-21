@@ -20,4 +20,8 @@
 
 > FocusTimer 2.0.
 
-* Teremos mais dois projetos, ao decorrer dos dias, com o objetivo da aplicação do conhecimento adquirido com o projeto FocusTimer 1.0.
+* Uma prévia de como está ficando o projeto...
+
+[Clique aqui para acessar](https://karinewagner.github.io/Projetos-FocusTimer/FocusTimer-2.0/) ☺️👍
+
+OBS: Projeto com o objetivo da aplicação do conhecimento em HTML, CSS e JavaScript.
