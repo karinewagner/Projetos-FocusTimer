@@ -24,4 +24,6 @@
 
 [Clique aqui para acessar](https://karinewagner.github.io/Projetos-FocusTimer/FocusTimer-2.0/) ☺️👍
 
+![preview](./FocusTimer-2.0/.github/preview.png)
+
 OBS: Projeto com o objetivo da aplicação do conhecimento em HTML, CSS e JavaScript.
