@@ -1,5 +1,8 @@
 import Timer from './timer.js'
-import Sounds from './controlsSounds.js'
+import Sounds from './sounds.js'
+import ControlSounds from './controlsSounds.js'
+import ControlTheme from './controlsTheme.js'
+import Events from './events.js'
 
 const initialTimeValue = document.querySelector('.timer')
 const minutesDisplay = document.querySelector('.minutes')
@@ -10,12 +13,26 @@ const buttonStop = document.querySelector('.stop')
 const buttonIncrease = document.querySelector('.increase')
 const buttonDecrease = document.querySelector('.decrease')
 
+const buttonSonsForest = document.querySelector('.sons-forest')
+const buttonSonsRain = document.querySelector('.sons-rain')
+const buttonSonsCoffeeShop = document.querySelector('.sons-coffeeShop')
+const buttonSonsFireplace = document.querySelector('.sons-fireplace')
+
 const buttonForest = document.querySelector('.btn-forest')
 const buttonRain = document.querySelector('.btn-rain')
 const buttonCoffeeShop = document.querySelector('.btn-coffeeShop')
 const buttonFireplace = document.querySelector('.btn-fireplace')
 
-let minutes = Number(minutesDisplay.textContent);
+const volBtnForest = document.querySelector('.volume-Forest')
+const volBtnRain = document.querySelector('volume-rain')
+const volBtncoffeeShop = document.querySelector('volume-coffeeShop')
+const volBtnfireplace = document.querySelector('volume-fireplace')
+
+const pageBody = document.querySelector('body')
+const btnLightTheme = document.querySelector('#light-theme')
+const btnDarkTheme = document.querySelector('#dark-theme')
+
+let minutes = Number(minutesDisplay.textContent)
 
 const timer = Timer({
   minutesDisplay,
@@ -25,47 +42,28 @@ const timer = Timer({
 
 const sounds = Sounds()
 
-initialTimeValue.addEventListener('click', function() {
-  let newMinutes = prompt('Quantos minutos?')
+const controlSounds = ControlSounds()
 
-  if (!newMinutes) {
-    timer.reset()
-    return
-  }
-
-  timer.updateDisplay(newMinutes, 0)
-
+const controlTheme = ControlTheme({
+    pageBody,
+    btnLightTheme,
+    btnDarkTheme
 })
 
-buttonPlay.addEventListener('click', function() {
-  timer.countdown()
+const events = Events({
+  controlTheme,  
+  btnLightTheme,
+  btnDarkTheme,
+  initialTimeValue,
+  timer,
+  buttonPlay,
+  buttonStop,
+  buttonIncrease,
+  buttonDecrease,
+  controlSounds,
+  sounds,
+  buttonSonsForest,
+  buttonSonsRain,
+  buttonSonsCoffeeShop,
+  buttonSonsFireplace
 })
-
-buttonStop.addEventListener('click', function() {
-  timer.hold()
-})
-
-buttonIncrease.addEventListener('click', function() {
-  timer.Increase5()
-})
-
-buttonDecrease.addEventListener('click', function() {
-  timer.Decrease5()
-})
-
-buttonForest.addEventListener('click', function() {
-  sounds.playForest()
-})
-
-buttonRain.addEventListener('click', function() {
-  sounds.playRain()
-})
-
-buttonCoffeeShop.addEventListener('click', function() {
-  sounds.playCoffeeShop()
-})
-
-buttonFireplace.addEventListener('click', function() {
-  sounds.playFireplace()
-})
-

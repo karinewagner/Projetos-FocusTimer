@@ -6,18 +6,41 @@
 
 :root {
   font-size: 62.5%;
-  background-color: #FFFFFF;
-
-  --color-timer: #323238;
-  --color-bt-timer: #323238;
-
-  --bg-bt-sons-off: #E1E1E6;
-  --color-bt-sons-off: #323238;
-  --color-bt-sons-on: #FFFFFF;
-
-  --btn-icon-color: gray;
+  
+  --bg-color: gray;
+  --time-color: gray;
+  --btn-time-color: gray;
+  --bg-sons-color: gray;
+  --btn-sons-color: gray;
+  --btn-theme-color: gray;
 }
 
+.light-theme {
+  --bg-color: #ffffff;
+  --time-color: #43434b;
+  --btn-time-color: #43434b;
+  --bg-sons-color: #E1E1E6;
+  --btn-sons-color: #43434b;
+  --btn-theme-color: #43434b;
+}
+
+.dark-theme {
+  --bg-color: #29292E;
+  --time-color: #C4C4CC;
+  --btn-time-color: #C4C4CC;
+  --bg-sons-color: #43434b;
+  --btn-sons-color: #e8e8f3;
+  --btn-theme-color: #dcdce4;
+}
+
+.hide {
+  display: none;
+}
+
+body {
+  position: relative;
+  background-color: var(--bg-color);
+}
 
 main {
   width: 82rem;
@@ -44,7 +67,7 @@ button {
   font-size: 12.6rem;
   font-weight: 500;
   line-height: 14.8rem;
-  color: var(--color-timer);
+  color: var(--time-color);
 
   display: flex;
   text-align: center;
@@ -59,8 +82,12 @@ button {
   gap: clamp(1rem, 1rem + 2vw, 4rem);
 }
 
-.button-menu:hover {
-  transform: scale(1.2);
+.buttons-control svg path {
+  fill: var(--btn-time-color);
+}
+
+button:hover {
+  transform: scale(1.1);
   transition: 0.6s;
 }
 
@@ -76,23 +103,27 @@ button {
 .base-btn-sons {
   height: 15.2rem;
   width: 13.8rem;
-  background-color: #E1E1E6;
+  background-color: var(--bg-sons-color);
   border-radius: 24px;
-  display: flex;
+  display: block;
   align-items: center;
   justify-content: center;
   transition: 0.6s;
 }
 
+.btn-icon-sons {
+  padding: 25px;
+  width: 110px;
+  height: 100px;
+}
+
 .btn-icon-sons path {
-  fill: var(--btn-icon-color);
+  fill: var(--btn-sons-color);
 }
 
 .base-btn-sons:hover {
   cursor: pointer;
-  --btn-icon-color: white;
-  transform: scale(1.1);
-  transition: 0.6s;
+  --btn-sons-color: white;
 }
 
 .btn-forest:hover {
@@ -109,4 +140,37 @@ button {
 
 .btn-fireplace:hover{
   background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+}
+
+.volume {
+  -webkit-appearance: none;
+  height: 5px;
+  width: 80%;
+  background: var(--btn-sons-color);
+  border-radius: 5px;
+  outline: none;
+  border: none;
+}
+
+.volume::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  background: var(--btn-sons-color);
+  border-radius: 50%;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Botão de tema*/
+.button-theme {
+  margin: 6.0rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+.button-theme svg path {
+  fill: var(--btn-theme-color);
 }
