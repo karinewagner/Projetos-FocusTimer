@@ -15,18 +15,13 @@ const buttonDecrease = document.querySelector('.decrease')
 
 const buttonSonsForest = document.querySelector('.sons-forest')
 const buttonSonsRain = document.querySelector('.sons-rain')
-const buttonSonsCoffeeShop = document.querySelector('.sons-coffeeShop')
+const buttonSonsCoffeeShop = document.querySelector('.sons-coffee-shop')
 const buttonSonsFireplace = document.querySelector('.sons-fireplace')
 
-const buttonForest = document.querySelector('.btn-forest')
-const buttonRain = document.querySelector('.btn-rain')
-const buttonCoffeeShop = document.querySelector('.btn-coffeeShop')
-const buttonFireplace = document.querySelector('.btn-fireplace')
-
-const volBtnForest = document.querySelector('.volume-Forest')
-const volBtnRain = document.querySelector('volume-rain')
-const volBtncoffeeShop = document.querySelector('volume-coffeeShop')
-const volBtnfireplace = document.querySelector('volume-fireplace')
+const volumeForest = document.querySelector('.volume-forest')
+const volumeRain = document.querySelector('.volume-rain')
+const volumeCoffeeShop = document.querySelector('.volume-coffee-shop')
+const volumeFireplace = document.querySelector('.volume-fireplace')
 
 const pageBody = document.querySelector('body')
 const btnLightTheme = document.querySelector('#light-theme')
@@ -65,5 +60,9 @@ const events = Events({
   buttonSonsForest,
   buttonSonsRain,
   buttonSonsCoffeeShop,
-  buttonSonsFireplace
+  buttonSonsFireplace,
+  volumeForest,
+  volumeRain,
+  volumeCoffeeShop,
+  volumeFireplace
 })

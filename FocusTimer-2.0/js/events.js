@@ -13,7 +13,11 @@ export default function Events({
   buttonSonsForest,
   buttonSonsRain,
   buttonSonsCoffeeShop,
-  buttonSonsFireplace
+  buttonSonsFireplace,
+  volumeForest,
+  volumeRain,
+  volumeCoffeeShop,
+  volumeFireplace
 }) {
 
   btnLightTheme.addEventListener('click', function() {
@@ -53,18 +57,34 @@ export default function Events({
   })
 
   buttonSonsForest.addEventListener('click', function() {
-    controlSounds.playPause(sounds.soundForest)
+    controlSounds.currentSounds(sounds.soundForest)
   })
   
   buttonSonsRain.addEventListener('click', function() {
-    controlSounds.playPause(sounds.soundRain)
+    controlSounds.currentSounds(sounds.soundRain)
   })
   
   buttonSonsCoffeeShop.addEventListener('click', function() {
-    controlSounds.playPause(sounds.soundCoffeeShop)
+    controlSounds.currentSounds(sounds.soundCoffeeShop)
   })
   
   buttonSonsFireplace.addEventListener('click', function() {
-    controlSounds.playPause(sounds.soundFireplace)
+    controlSounds.currentSounds(sounds.soundFireplace)
+  })
+
+  volumeForest.addEventListener('change', function() {
+    controlSounds.setVolume(sounds.soundForest, volumeForest)
+  })
+  
+  volumeRain.addEventListener('change', function() {
+    controlSounds.setVolume(sounds.soundRain, volumeRain)
+  })
+  
+  volumeCoffeeShop.addEventListener('change', function() {
+    controlSounds.setVolume(sounds.soundCoffeeShop, volumeCoffeeShop)
+  })
+  
+  volumeFireplace.addEventListener('change', function() {
+    controlSounds.setVolume(sounds.soundFireplace, volumeFireplace)
   })
 }

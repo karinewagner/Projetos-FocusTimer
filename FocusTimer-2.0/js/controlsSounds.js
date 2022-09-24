@@ -1,19 +1,28 @@
 export default function ControlSounds() {
+  let currentSoundPlaying = null
 
-  var isPlaying = false;
+  function currentSounds(audio) {
+    if (currentSoundPlaying) {
+      currentSoundPlaying.pause()
+      
+      if (currentSoundPlaying !== audio) {
+        currentSoundPlaying = audio
+        audio.play()
+      } else {
+        currentSoundPlaying = null
+      }
+    } else {
+      currentSoundPlaying = audio
+      audio.play()
+    }
+  }
 
-  function playPause(audio) {
-    isPlaying ? audio.pause() : audio.play();
- 
-    audio.onplaying = function() {
-      isPlaying = true;
-    };
-    audio.onpause = function() {
-      isPlaying = false;
-    };
-  };
+  function setVolume(soundReference, inputToChange) {
+    soundReference.volume = inputToChange.value;
+  } 
 
-   return {
-    playPause
+  return {
+    currentSounds,
+    setVolume
   }
 }
